@@ -20,10 +20,9 @@ A lightweight web application built with Vanilla JavaScript, HTML, and CSS that 
 ## 📂 Project Structure
 
 ```text
-FlagComporator/
+flag-explorer/
 ├── css/             # Stylesheets for the application's layout and design
 ├── js/              # Vanilla JavaScript files for logic and interactivity
 ├── locales/         # Translation files for multi-language support
 ├── index.html       # The main entry point of the application
-└── .DS_Store        # macOS system file (can be ignored)
 ```
