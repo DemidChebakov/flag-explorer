@@ -1,0 +1,21 @@
+{
+  "appTitle": "Zászló Összehasonlító",
+  "addPosition": "Zászló hozzáadása",
+  "removePosition": "Eltávolítás",
+  "randomize": "Véletlenszerű",
+  "searchPlaceholder": "Ország keresése...",
+  "selectCountry": "Válasszon országot",
+  "europe": "Európa",
+  "asia": "Ázsia",
+  "africa": "Afrika",
+  "north_america": "Észak-Amerika",
+  "south_america": "Dél-Amerika",
+  "oceania": "Óceánia",
+  "language": "Nyelv",
+  "noResults": "Nincs találat",
+  "viewOnMap": "Térkép megtekintése",
+  "quickFacts": "Gyors tények",
+  "capital": "Főváros",
+  "population": "Népesség",
+  "area": "Terület"
+}

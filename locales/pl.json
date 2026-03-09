@@ -1,0 +1,21 @@
+{
+  "appTitle": "Porównywarka Flag",
+  "addPosition": "Dodaj flagę",
+  "removePosition": "Usuń",
+  "randomize": "Losuj",
+  "searchPlaceholder": "Szukaj kraju...",
+  "selectCountry": "Wybierz kraj",
+  "europe": "Europa",
+  "asia": "Azja",
+  "africa": "Afryka",
+  "north_america": "Ameryka Północna",
+  "south_america": "Ameryka Południowa",
+  "oceania": "Oceania",
+  "language": "Język",
+  "noResults": "Brak wyników",
+  "viewOnMap": "Zobacz na mapie",
+  "quickFacts": "Krótkie fakty",
+  "capital": "Stolica",
+  "population": "Ludność",
+  "area": "Powierzchnia"
+}

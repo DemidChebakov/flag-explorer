@@ -1,0 +1,21 @@
+{
+  "appTitle": "Порівняння Прапорів",
+  "addPosition": "Додати прапор",
+  "removePosition": "Видалити",
+  "randomize": "Випадково",
+  "searchPlaceholder": "Пошук країни...",
+  "selectCountry": "Оберіть країну",
+  "europe": "Європа",
+  "asia": "Азія",
+  "africa": "Африка",
+  "north_america": "Північна Америка",
+  "south_america": "Південна Америка",
+  "oceania": "Океанія",
+  "language": "Мова",
+  "noResults": "Немає результатів",
+  "viewOnMap": "Переглянути на мапі",
+  "quickFacts": "Коротко",
+  "capital": "Столиця",
+  "population": "Населення",
+  "area": "Площа"
+}

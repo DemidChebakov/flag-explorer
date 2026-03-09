@@ -1,0 +1,21 @@
+{
+  "appTitle": "Сравнение на Знамена",
+  "addPosition": "Добави знаме",
+  "removePosition": "Премахни",
+  "randomize": "Случайно",
+  "searchPlaceholder": "Търсене на държава...",
+  "selectCountry": "Изберете държава",
+  "europe": "Европа",
+  "asia": "Азия",
+  "africa": "Африка",
+  "north_america": "Северна Америка",
+  "south_america": "Южна Америка",
+  "oceania": "Океания",
+  "language": "Език",
+  "noResults": "Няма резултати",
+  "viewOnMap": "Виж на картата",
+  "quickFacts": "Кратка информация",
+  "capital": "Столица",
+  "population": "Население",
+  "area": "Площ"
+}

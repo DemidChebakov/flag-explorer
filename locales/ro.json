@@ -1,0 +1,21 @@
+{
+  "appTitle": "Comparator de Steaguri",
+  "addPosition": "Adaugă steag",
+  "removePosition": "Elimină",
+  "randomize": "Aleatoriu",
+  "searchPlaceholder": "Caută țara...",
+  "selectCountry": "Selectează o țară",
+  "europe": "Europa",
+  "asia": "Asia",
+  "africa": "Africa",
+  "north_america": "America de Nord",
+  "south_america": "America de Sud",
+  "oceania": "Oceania",
+  "language": "Limbă",
+  "noResults": "Fără rezultate",
+  "viewOnMap": "Vezi pe hartă",
+  "quickFacts": "Informații rapide",
+  "capital": "Capitala",
+  "population": "Populație",
+  "area": "Suprafață"
+}

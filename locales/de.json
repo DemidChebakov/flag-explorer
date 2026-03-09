@@ -1,0 +1,21 @@
+{
+  "appTitle": "Flaggenvergleich",
+  "addPosition": "Flagge hinzufügen",
+  "removePosition": "Entfernen",
+  "randomize": "Zufällig",
+  "searchPlaceholder": "Land suchen...",
+  "selectCountry": "Land auswählen",
+  "europe": "Europa",
+  "asia": "Asien",
+  "africa": "Afrika",
+  "north_america": "Nordamerika",
+  "south_america": "Südamerika",
+  "oceania": "Ozeanien",
+  "language": "Sprache",
+  "noResults": "Keine Ergebnisse",
+  "viewOnMap": "Auf Karte ansehen",
+  "quickFacts": "Kurzinfo",
+  "capital": "Hauptstadt",
+  "population": "Bevölkerung",
+  "area": "Fläche"
+}

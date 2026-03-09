@@ -1,0 +1,21 @@
+{
+  "appTitle": "Porovnávač Vlajok",
+  "addPosition": "Pridať vlajku",
+  "removePosition": "Odstrániť",
+  "randomize": "Náhodne",
+  "searchPlaceholder": "Hľadať krajinu...",
+  "selectCountry": "Vyberte krajinu",
+  "europe": "Európa",
+  "asia": "Ázia",
+  "africa": "Afrika",
+  "north_america": "Severná Amerika",
+  "south_america": "Južná Amerika",
+  "oceania": "Oceánia",
+  "language": "Jazyk",
+  "noResults": "Žiadne výsledky",
+  "viewOnMap": "Zobraziť na mape",
+  "quickFacts": "Stručné fakty",
+  "capital": "Hlavné mesto",
+  "population": "Obyvateľstvo",
+  "area": "Rozloha"
+}

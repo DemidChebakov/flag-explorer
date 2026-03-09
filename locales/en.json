@@ -1,0 +1,21 @@
+{
+  "appTitle": "Flag Comparator",
+  "addPosition": "Add flag",
+  "removePosition": "Remove",
+  "randomize": "Random",
+  "searchPlaceholder": "Search country...",
+  "selectCountry": "Select a country",
+  "europe": "Europe",
+  "asia": "Asia",
+  "africa": "Africa",
+  "north_america": "North America",
+  "south_america": "South America",
+  "oceania": "Oceania",
+  "language": "Language",
+  "noResults": "No results",
+  "viewOnMap": "View on Map",
+  "quickFacts": "Quick facts",
+  "capital": "Capital",
+  "population": "Population",
+  "area": "Area"
+}

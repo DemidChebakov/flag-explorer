@@ -1,0 +1,21 @@
+{
+  "appTitle": "Comparador de Banderas",
+  "addPosition": "Añadir bandera",
+  "removePosition": "Eliminar",
+  "randomize": "Aleatorio",
+  "searchPlaceholder": "Buscar país...",
+  "selectCountry": "Seleccionar un país",
+  "europe": "Europa",
+  "asia": "Asia",
+  "africa": "África",
+  "north_america": "América del Norte",
+  "south_america": "América del Sur",
+  "oceania": "Oceanía",
+  "language": "Idioma",
+  "noResults": "Sin resultados",
+  "viewOnMap": "Ver en Mapa",
+  "quickFacts": "Datos rápidos",
+  "capital": "Capital",
+  "population": "Población",
+  "area": "Superficie"
+}

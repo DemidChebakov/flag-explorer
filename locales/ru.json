@@ -1,0 +1,21 @@
+{
+  "appTitle": "Сравнение Флагов",
+  "addPosition": "Добавить флаг",
+  "removePosition": "Удалить",
+  "randomize": "Случайно",
+  "searchPlaceholder": "Поиск страны...",
+  "selectCountry": "Выберите страну",
+  "europe": "Европа",
+  "asia": "Азия",
+  "africa": "Африка",
+  "north_america": "Северная Америка",
+  "south_america": "Южная Америка",
+  "oceania": "Океания",
+  "language": "Язык",
+  "noResults": "Нет результатов",
+  "viewOnMap": "Показать на карте",
+  "quickFacts": "Краткие факты",
+  "capital": "Столица",
+  "population": "Население",
+  "area": "Площадь"
+}
