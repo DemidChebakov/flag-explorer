@@ -66,9 +66,58 @@ function getCountryName(country) {
 
 function renderApp() {
   const app = document.getElementById("app");
-  app.innerHTML = "";
-  app.appendChild(renderHeader());
-  app.appendChild(renderGrid());
+  let header = app.querySelector(".header");
+  let grid = app.querySelector(".flags-grid");
+
+  if (!header) {
+    header = renderHeader();
+    app.appendChild(header);
+  } else {
+    updateHeader(header);
+  }
+
+  if (!grid) {
+    grid = document.createElement("div");
+    grid.className = "flags-grid";
+    app.appendChild(grid);
+  }
+
+  renderOnlyGrid();
+}
+
+function updateHeader(header) {
+  const title = header.querySelector("h1");
+  if (title) title.textContent = t("appTitle");
+
+  const btnRandomText = header.querySelector("#btn-random .btn-text");
+  if (btnRandomText) btnRandomText.textContent = t("randomize");
+
+  const btnAddText = header.querySelector("#btn-add .btn-text");
+  if (btnAddText) btnAddText.textContent = t("addPosition");
+
+  const langName = header.querySelector(".lang-name");
+  if (langName) langName.textContent = LANG_NAMES[getLang()];
+
+  // Update language dropdown active state
+  header.querySelectorAll(".lang-option").forEach((opt) => {
+    opt.classList.toggle("active", opt.dataset.lang === getLang());
+  });
+}
+
+// Surgical update of the grid to avoid layout jumps and node loss
+function renderOnlyGrid() {
+  const grid = document.querySelector(".flags-grid");
+  if (!grid) return;
+
+  grid.className = `flags-grid${slots.length === 3 ? " cols-3" : slots.length === 4 ? " cols-4" : ""}`;
+
+  // For maximum stability, we replace children surgically
+  const fragment = document.createDocumentFragment();
+  slots.forEach((code, idx) => {
+    fragment.appendChild(renderCard(code, idx));
+  });
+
+  grid.replaceChildren(fragment);
 }
 
 function renderHeader() {
@@ -429,7 +478,7 @@ function removeSlot(idx) {
   renderApp();
 }
 
-function randomize() {
+async function randomize() {
   const all = getAllCountries();
   const used = new Set();
   slots = slots.map(() => {
@@ -441,7 +490,16 @@ function randomize() {
     return c.code;
   });
   saveSlots();
-  renderApp();
+
+  const grid = document.querySelector(".flags-grid");
+  if (grid) grid.setAttribute("data-randomizing", "true");
+
+  renderOnlyGrid();
+
+  // Short timeout to allow CSS to disable entrance animations during rapid clicks
+  setTimeout(() => {
+    if (grid) grid.removeAttribute("data-randomizing");
+  }, 100);
 }
 
 // Close dropdowns and popups on outside click
