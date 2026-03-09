@@ -1,6 +1,6 @@
-# 🏳️ Flag Comporator
+# 🏳️ Flag Explorer
 
-**Try it live: [Flag Comporator on GitHub Pages](https://demidchebakov.github.io/FlagComporator/)**
+**Try it live: [Flag Explorer on GitHub Pages](https://demidchebakov.github.io/FlagComporator/)**
 
 A lightweight web application built with Vanilla JavaScript, HTML, and CSS that allows users to compare flags side-by-side. The project also features built-in multilingual support.
 
