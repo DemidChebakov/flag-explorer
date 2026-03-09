@@ -87,13 +87,17 @@ function renderApp() {
 
 function updateHeader(header) {
   const title = header.querySelector("h1");
-  if (title) title.textContent = t("appTitle");
+  if (title) title.innerHTML = `${t("appTitle")} <span class="slot-counter">(${slots.length}/${MAX_SLOTS})</span>`;
 
   const btnRandomText = header.querySelector("#btn-random .btn-text");
   if (btnRandomText) btnRandomText.textContent = t("randomize");
 
-  const btnAddText = header.querySelector("#btn-add .btn-text");
-  if (btnAddText) btnAddText.textContent = t("addPosition");
+  const btnAdd = header.querySelector("#btn-add");
+  if (btnAdd) {
+    btnAdd.classList.toggle("hidden", slots.length >= MAX_SLOTS);
+    const btnAddText = btnAdd.querySelector(".btn-text");
+    if (btnAddText) btnAddText.textContent = t("addPosition");
+  }
 
   const langName = header.querySelector(".lang-name");
   if (langName) langName.textContent = LANG_NAMES[getLang()];
@@ -125,7 +129,7 @@ function renderHeader() {
   header.className = "header";
 
   header.innerHTML = `
-    <h1>${t("appTitle")}</h1>
+    <h1>${t("appTitle")} <span class="slot-counter">(${slots.length}/${MAX_SLOTS})</span></h1>
     <div class="header-actions">
       <button class="btn btn-primary" id="btn-random">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -135,16 +139,10 @@ function renderHeader() {
         </svg>
         <span class="btn-text">${t("randomize")}</span>
       </button>
-      ${
-        slots.length < MAX_SLOTS
-          ? `
-        <button class="btn btn-secondary" id="btn-add">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          <span class="btn-text">${t("addPosition")}</span>
-        </button>
-      `
-          : ""
-      }
+      <button class="btn btn-secondary ${slots.length >= MAX_SLOTS ? "hidden" : ""}" id="btn-add">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span class="btn-text">${t("addPosition")}</span>
+      </button>
       <button class="btn btn-icon btn-secondary" id="btn-theme" title="Theme">
         ${
           getEffectiveTheme() === "dark"
