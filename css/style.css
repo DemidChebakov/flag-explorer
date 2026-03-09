@@ -23,6 +23,9 @@
   --radius: 16px;
   --radius-sm: 10px;
   --transition: 0.2s ease;
+  --flag-outline: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --flag-glow: 0 0 15px rgba(255, 255, 255, 0.8);
+  --card-glow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,8 +40,10 @@
     --border: #38383a;
     --accent: #2997ff;
     --accent-hover: #40a0ff;
-    --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.7);
+    --flag-outline: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4);
+    --flag-glow: 0 0 25px rgba(255, 255, 255, 0.25);
+    --card-glow: 0 0 35px rgba(255, 255, 255, 0.12);
   }
 }
 
@@ -53,12 +58,16 @@
   --border: #38383a;
   --accent: #2997ff;
   --accent-hover: #40a0ff;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.7);
+  --flag-outline: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4);
+  --flag-glow: 0 0 25px rgba(255, 255, 255, 0.25);
+  --card-glow: 0 0 35px rgba(255, 255, 255, 0.12);
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto,
+    sans-serif;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -102,15 +111,24 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 20px;
+  justify-content: center;
+  gap: 8px;
+  height: 2.75rem; /* ~44px */
+  padding: 0 1.25rem;
   border: none;
   border-radius: 980px;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
   white-space: nowrap;
+  line-height: 1;
+}
+
+.btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
 }
 
 .btn-primary {
@@ -134,14 +152,10 @@ body {
 }
 
 .btn-icon {
-  width: 40px;
-  height: 40px;
+  width: 2.75rem;
+  height: 2.75rem;
   padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
-  font-size: 1.1rem;
 }
 
 .btn-remove {
@@ -167,16 +181,17 @@ body {
 }
 
 .lang-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
+  gap: 8px;
+  height: 2.75rem;
+  padding: 0 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 980px;
   color: var(--text);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition);
 }
@@ -186,9 +201,9 @@ body {
 }
 
 .lang-btn svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.7;
 }
 
 .lang-dropdown {
@@ -196,13 +211,33 @@ body {
   top: calc(100% + 6px);
   right: 0;
   min-width: 180px;
+  max-height: 60vh;
   background: var(--bg-dropdown);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
-  z-index: 100;
-  overflow: hidden;
+  z-index: 1000;
+  overflow-y: auto;
   display: none;
+}
+
+@media (max-width: 600px) {
+  .lang-name {
+    display: none;
+  }
+
+  .lang-btn {
+    width: 2.75rem;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .lang-dropdown {
+    right: 0;
+    left: auto;
+    min-width: 160px;
+  }
 }
 
 .lang-dropdown.open {
@@ -210,6 +245,26 @@ body {
   animation: fadeIn 0.15s ease;
 }
 
+/* Button state when dropdown is open */
+.lang-select:has(.lang-dropdown.open) .lang-btn,
+.lang-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-hover);
+  box-shadow: 0 0 15px rgba(41, 151, 255, 0.2);
+}
+
+.lang-select:has(.lang-dropdown.open) .lang-btn svg {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.lang-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.7;
+  transition: transform var(--transition);
+}
 .lang-option {
   display: block;
   width: 100%;
@@ -272,7 +327,7 @@ body {
 }
 
 .flag-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--card-glow);
 }
 
 .flag-image-wrap {
@@ -285,6 +340,20 @@ body {
   justify-content: center;
   overflow: hidden;
   border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.flag-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: var(--flag-outline);
+  pointer-events: none;
+  border-radius: inherit;
+  transition: box-shadow 0.3s ease;
+}
+
+.flag-card:hover .flag-image-wrap::after {
+  box-shadow: var(--flag-outline), var(--flag-glow);
 }
 
 .flag-image-wrap img {
@@ -513,8 +582,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .selector-search {
@@ -621,6 +696,38 @@ body {
 
   .header h1 {
     font-size: 1.6rem;
+  }
+
+  .header-actions {
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .btn {
+    padding: 0 0.75rem;
+    font-size: 0.8rem;
+    height: 2.5rem;
+  }
+
+  .btn-icon,
+  .lang-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  /* On small phones, hide text to save space */
+  @media (max-width: 400px) {
+    .btn-text {
+      display: none;
+    }
+    .btn {
+      width: 2.5rem;
+      padding: 0;
+    }
   }
 
   .flags-grid,
