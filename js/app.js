@@ -181,6 +181,7 @@ function renderHeader() {
 
   langDropdown.querySelectorAll(".lang-option").forEach((btn) => {
     btn.addEventListener("click", async () => {
+      langDropdown.classList.remove("open");
       await setLanguage(btn.dataset.lang);
     });
   });
